@@ -4,7 +4,7 @@ Responsive Halloween Store Website using SCSS, React (with Vite).
 
 ## Demo
 
-This is the link:
+https://halloween-store.netlify.app/
 
 ## Run
 
