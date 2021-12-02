@@ -1,0 +1,38 @@
+// https://getbootstrap.com/docs/5.0/layout/breakpoints/
+
+/* For really small devices */
+@mixin xsMaxWidth {
+  @media screen and (max-width: 320px) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media screen and (min-width: 576px) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media screen and (min-width: 767px) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media screen and (min-width: 992px) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media screen and (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin xxl {
+  @media screen and (min-width: 1400px) {
+    @content;
+  }
+}

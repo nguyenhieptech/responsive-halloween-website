@@ -1,0 +1,31 @@
+.about__container {
+  row-gap: 2rem;
+}
+
+.about__data {
+  text-align: center;
+
+  > .description {
+    margin-bottom: var(--mb-2);
+  }
+}
+
+.about__img {
+  width: 200px;
+  justify-self: center;
+}
+
+@include xsMaxWidth {
+  .about__data {
+    > .description {
+      font-size: var(--small-font-size);
+    }
+  }
+}
+
+@include sm {
+  .about__container {
+    grid-template-columns: 0.8fr;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,122 @@
+.home__content {
+  row-gap: 1rem;
+}
+
+.home__group {
+  display: grid;
+  position: relative;
+  padding-top: 2rem;
+
+  > .img {
+    height: 250px;
+    justify-self: center;
+  }
+
+  > .indicator {
+    position: absolute;
+    top: 7rem;
+    right: 2rem;
+    width: 8px;
+    height: 8px;
+    background-color: var(--title-color);
+    border-radius: 50%;
+  }
+
+  > .indicator::after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 48px;
+    background-color: var(--title-color);
+    top: -3rem;
+    right: 45%;
+  }
+
+  > .info {
+    position: absolute;
+    right: 0.5rem;
+  }
+
+  .title,
+  .subtitle {
+    display: block;
+    font-size: var(--small-font-size);
+    text-align: right;
+  }
+}
+
+.home__data {
+  margin-top: var(--mb-1);
+
+  > .subtitle {
+    font-size: var(--h3-font-size);
+    text-transform: uppercase;
+    margin-bottom: var(--mb-1);
+  }
+
+  > .title {
+    font-size: var(--biggest-font-size);
+    font-weight: var(--font-black);
+    line-height: 109%;
+    margin-bottom: var(--mb-1);
+    width: 65%;
+  }
+
+  > .description {
+    margin-bottom: var(--mb-1);
+  }
+
+  > .buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+/* React Slick Class */
+/* Hide previous and next arrow of react slick */
+.slick-arrow {
+  &.slick-prev,
+  &.slick-next {
+    display: none !important;
+  }
+}
+
+.slick-dots {
+  display: flex !important;
+  align-items: center !important;
+  height: 1.5rem;
+  margin: 1rem 0;
+
+  > ul {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 1rem 0;
+  }
+
+  > ul > li {
+    list-style-type: none;
+    width: 5px;
+    height: 5px;
+    margin: 0 0.5rem;
+    background-color: var(--title-color);
+    opacity: 1;
+    border-radius: 50%;
+  }
+
+  .slick-active {
+    width: 1.5rem;
+    height: 5px;
+    border-radius: 0.5rem;
+  }
+
+  li button {
+    display: none;
+  }
+}
+
+@include md {
+  .slick-dots {
+    margin: 4rem 0;
+  }
+}

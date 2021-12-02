@@ -1,0 +1,60 @@
+.trick__container {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  padding-top: 1rem;
+}
+
+.trick__data {
+  position: relative;
+  background: var(--container-color);
+  border-radius: 1rem;
+  padding: 1.5rem 0 1rem 0;
+  text-align: center;
+  overflow: hidden;
+
+  > .img {
+    width: 90px;
+    display: inline-block;
+    transition: 0.3s;
+  }
+
+  &:hover .img {
+    transform: translateY(-0.5rem);
+  }
+
+  > .subtitle,
+  > .price {
+    display: block;
+  }
+
+  > .subtitle {
+    font-size: var(--smaller-font-size);
+    margin-bottom: var(--mb-0-5);
+  }
+
+  > .title,
+  > .price {
+    color: var(--title-color);
+    font-weight: var(--font-medium);
+    font-size: var(--normal-font-size);
+  }
+
+  .trick__button {
+    position: absolute;
+    right: -3rem;
+    bottom: 0;
+
+    display: inline-flex;
+    padding: 0.5rem;
+    border-radius: 0.25rem 0.25rem 0.75rem 0.25rem;
+  }
+  &:hover .trick__button {
+    right: 0;
+    cursor: pointer;
+  }
+
+  .trick__icon {
+    font-size: 1.25rem;
+    color: var(--title-color);
+  }
+}

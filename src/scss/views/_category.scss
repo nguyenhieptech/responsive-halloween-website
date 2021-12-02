@@ -1,0 +1,23 @@
+.category__container {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem 2rem;
+}
+
+.category__data {
+  text-align: center;
+
+  > .img {
+    width: 120px;
+    margin-bottom: var(--mb-0-75);
+    transition: 0.3s;
+    display: inline-block;
+  }
+
+  > .title {
+    margin-bottom: var(--mb-0-25);
+  }
+
+  &:hover > .img {
+    transform: translateY(-0.5rem);
+  }
+}

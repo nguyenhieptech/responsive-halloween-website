@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;900&display=swap');
+
+@import './normalize.min';
+@import './mixins';
+@import './variables';
+@import './base';
+@import './layout';
+
+@import './components/button';
+@import './components/header';
+@import './components/section';
+@import './components/footer';
+@import './components/scroll-to-top';
+
+@import './views/home';
+@import './views/category';
+@import './views/about';
+@import './views/trick-or-treat';
+@import './views/discount';
+@import './views/new-arrivals';
+@import './views/newsletter';
+
+@import './breakpoints';
