@@ -6,35 +6,34 @@ import { useScrollY } from '../hooks/useScrollY';
 
 function Header() {
   const [isMenuShowed, toggleMenu] = useToggle(false);
-  const menuClassName = isMenuShowed ? 'nav__menu show__menu' : 'nav__menu';
-
   const { navBarData, handleClickOnNavLink } = useNavBar(toggleMenu);
-
   const windowScrollY = useScrollY();
-  const headerClassName =
-    windowScrollY >= 50 ? 'header scroll__header' : 'header';
 
   return (
-    <header className={headerClassName}>
+    <header
+      className={windowScrollY >= 50 ? 'header scroll__header' : 'header'}
+    >
       <nav className="nav container">
         <a href="#home" className="nav__logo">
           <img src={logo} alt="" />
           Halloween
         </a>
 
-        <div className={menuClassName}>
+        <div className={isMenuShowed ? 'nav__menu show__menu' : 'nav__menu'}>
           <ul className="nav__list">
-            {navBarData.map((item) => {
+            {navBarData.map((navBarItem) => {
               return (
-                <li key={item.index} className="nav__item">
+                <li key={navBarItem.index} className="nav__item">
                   <a
                     className={
-                      item.isActive ? 'nav__link active__link' : 'nav__link'
+                      navBarItem.isActive
+                        ? 'nav__link active__link'
+                        : 'nav__link'
                     }
-                    href={item.path}
-                    onClick={() => handleClickOnNavLink(item)}
+                    href={navBarItem.path}
+                    onClick={() => handleClickOnNavLink(navBarItem)}
                   >
-                    {item.title}
+                    {navBarItem.title}
                   </a>
                 </li>
               );

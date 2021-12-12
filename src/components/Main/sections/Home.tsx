@@ -2,6 +2,7 @@ import Slider from 'react-slick';
 import home1Img from '../../../img/home1-img.png';
 import home2Img from '../../../img/home2-img.png';
 import home3Img from '../../../img/home3-img.png';
+import ScrollRevealAnimation from '../../ScrollRevealAnimation';
 
 function Home() {
   const settings = {
@@ -69,41 +70,43 @@ function Home() {
   ];
 
   return (
-    <section className="home container" id="home">
-      <Slider {...settings}>
-        {sliderContent.map((content, index) => {
-          const { group, data } = content;
+    <ScrollRevealAnimation timing="1">
+      <section className="home container" id="home">
+        <Slider {...settings}>
+          {sliderContent.map((content, index) => {
+            const { group, data } = content;
 
-          return (
-            <div className="home__content grid" key={index}>
-              <div className="home__group">
-                <img className="img" src={group.img} alt="" />
-                <div className="indicator" />
-                <div className="info">
-                  <h4 className="title">{group.title}</h4>
-                  <span className="subtitle">{group.subtitle}</span>
+            return (
+              <div className="home__content grid" key={index}>
+                <div className="home__group">
+                  <img className="img" src={group.img} alt="" />
+                  <div className="indicator" />
+                  <div className="info">
+                    <h4 className="title">{group.title}</h4>
+                    <span className="subtitle">{group.subtitle}</span>
+                  </div>
+                </div>
+
+                <div className="home__data">
+                  <h3 className="subtitle">{data.subtitle}</h3>
+                  <h2 className="title">{data.title}</h2>
+                  <p className="description">{data.description}</p>
+                  <div className="buttons">
+                    <a className="button" href="#">
+                      Book Now
+                    </a>
+                    <a className="button--link button--flex" href="#">
+                      Track Record
+                      <i className="bx bx-right-arrow-alt button__icon" />
+                    </a>
+                  </div>
                 </div>
               </div>
-
-              <div className="home__data">
-                <h3 className="subtitle">{data.subtitle}</h3>
-                <h2 className="title">{data.title}</h2>
-                <p className="description">{data.description}</p>
-                <div className="buttons">
-                  <a className="button" href="#">
-                    Book Now
-                  </a>
-                  <a className="button--link button--flex" href="#">
-                    Track Record
-                    <i className="bx bx-right-arrow-alt button__icon" />
-                  </a>
-                </div>
-              </div>
-            </div>
-          );
-        })}
-      </Slider>
-    </section>
+            );
+          })}
+        </Slider>
+      </section>
+    </ScrollRevealAnimation>
   );
 }
 

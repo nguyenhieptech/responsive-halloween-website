@@ -4,6 +4,7 @@ import trickOrTreat3Img from '../../../img/trick-treat3-img.png';
 import trickOrTreat4Img from '../../../img/trick-treat4-img.png';
 import trickOrTreat5Img from '../../../img/trick-treat5-img.png';
 import trickOrTreat6Img from '../../../img/trick-treat6-img.png';
+import ScrollRevealAnimation from '../../ScrollRevealAnimation';
 
 function TrickOrTreat() {
   const trickOrTreatData = [
@@ -46,25 +47,27 @@ function TrickOrTreat() {
   ];
 
   return (
-    <section className="section" id="candy">
-      <h2 className="section__title">Trick Or Treat</h2>
+    <ScrollRevealAnimation>
+      <section className="section" id="candy">
+        <h2 className="section__title">Trick Or Treat</h2>
 
-      <div className="trick__container container grid">
-        {trickOrTreatData.map((data, index) => {
-          return (
-            <div className="trick__data" key={index}>
-              <img className="img" src={data.img} alt={data.title} />
-              <h3 className="title">{data.title}</h3>
-              <span className="subtitle">{data.subtitle}</span>
-              <span className="price">{data.price}</span>
-              <button className="button trick__button">
-                <i className="bx bx-cart-alt trick__icon"></i>
-              </button>
-            </div>
-          );
-        })}
-      </div>
-    </section>
+        <div className="trick__container container grid">
+          {trickOrTreatData.map((data, index) => {
+            return (
+              <div className="trick__data" key={index}>
+                <img className="img" src={data.img} alt={data.title} />
+                <h3 className="title">{data.title}</h3>
+                <span className="subtitle">{data.subtitle}</span>
+                <span className="price">{data.price}</span>
+                <button className="button trick__button">
+                  <i className="bx bx-cart-alt trick__icon"></i>
+                </button>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+    </ScrollRevealAnimation>
   );
 }
 
