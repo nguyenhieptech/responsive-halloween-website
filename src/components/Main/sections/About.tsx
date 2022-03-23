@@ -5,7 +5,7 @@ function About() {
   return (
     <ScrollRevealAnimation>
       <section className="section about" id="about">
-        <div className="about__container container grid">
+        <div className="container grid about__container">
           <div className="about__data">
             <h2 className="section__title">
               About Halloween <br /> Night
@@ -16,7 +16,10 @@ function About() {
               celebration comes from ancient origins, and is already celebrated
               by everyone.
             </p>
-            <a className="button" href="#">
+            <a
+              className="button"
+              href="https://apps.apple.com/us/app/simplenote/id289429962"
+            >
               Know more
             </a>
           </div>
