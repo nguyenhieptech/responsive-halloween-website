@@ -1,5 +1,6 @@
 import aboutImg from '../../../img/about-img.png';
 import ScrollRevealAnimation from '../../ScrollRevealAnimation';
+import { isIOS, isAndroid } from 'react-device-detect';
 
 function About() {
   return (
@@ -18,7 +19,11 @@ function About() {
             </p>
             <a
               className="button"
-              href="https://apps.apple.com/us/app/simplenote/id289429962"
+              href={
+                isIOS
+                  ? 'https://apps.apple.com/us/app/simplenote/id289429962'
+                  : 'https://play.google.com/store/apps/details?id=com.automattic.simplenote&gl=ru'
+              }
             >
               Know more
             </a>
